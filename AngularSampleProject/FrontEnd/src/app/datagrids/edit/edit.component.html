@@ -1,0 +1,46 @@
+<div class="card">
+    <div class="card-img-overlay">
+        <div  class="container text-center">
+            <h4>Update Form</h4> <br>
+            <form [formGroup]="registerForm" (ngSubmit)="update(app)" novalidate>
+                <div class="form-group">
+                    <label class="col-md-3"> 
+                        <input type="text" name="firstname" class="form-control" formControlName="firstname" [(ngModel)]="app.firstname" placeholder="First Name" onkeypress="return /[a-z]/i.test(event.key)"  minlength="3" maxlength="15" required autocomplete="none"/>
+                        <div *ngIf="registerForm.controls['firstname'].hasError('required') && (registerForm.controls.firstname.touched)" class="text-danger text-left">
+                            <strong>First Name is required</strong>
+                        </div>
+                    </label>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-3"> 
+                        <input type="text" name="lastname" class="form-control" formControlName="lastname" [(ngModel)]="app.lastname" placeholder="Last Name" onkeypress="return /[a-z]/i.test(event.key)"  minlength="1" maxlength="10" required autocomplete="none"/>
+                        <div *ngIf="registerForm.controls['lastname'].hasError('required') && (registerForm.controls.lastname.touched)" class="text-danger text-left">
+                            <strong>Last Name is required</strong>
+                        </div>
+                    </label>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-3"> 
+                        <input type="text" name="username" class="form-control" formControlName="username" [(ngModel)]="app.username" placeholder="User Name"   minlength="3" maxlength="15" required autocomplete="none"/>
+                        <div *ngIf="registerForm.controls['username'].hasError('required') && (registerForm.controls.username.touched)" class="text-danger text-left">
+                            <strong>User Name is required</strong>
+                        </div>
+                    </label>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-3">
+                        <input type="text" name="email"  class="form-control" formControlName="email" [(ngModel)]="app.email" placeholder="Email" email pattern="[a-zA-Z0-9.-_]{1,}@[a-zA-Z.-]{2,}[.]{1}[a-zA-Z]{2,}" required autocomplete="off"/>
+                        <div *ngIf="registerForm.controls['email'].hasError('required') && ( registerForm.controls.email.touched)" class="text-danger text-left" >
+                            <strong>Email is Required</strong>
+                        </div>
+                    </label>
+                </div>
+                <div class="form group">
+                    <button [disabled]="!registerForm.valid" class="btn btn-primary">Update</button>&nbsp;
+                    <button class="btn btn-danger" routerLink="/User">Cancel</button>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>

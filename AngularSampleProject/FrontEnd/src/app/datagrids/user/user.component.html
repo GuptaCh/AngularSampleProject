@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+
+<div class="content">
+    <div class="container ">
+      <!-- <div class="container">
+          <button>Clickme</button>
+          <div class="dialog"></div>
+        </div> -->
+      &nbsp;
+      <div class="table-responsive-sm">
+        <table class="table">
+          <thead>
+            <tr> 
+              <th class="text-center">S.NO</th>
+              <th class="text-center">First Name</th>
+              <th class="text-center">Last Name</th>
+              <th class="text-center">User Name</th>
+              <th class="text-center">Email</th>
+              <th class="text-center">Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor=" let i= index; let app of app | paginate: { id: 'listing_pagination',itemsPerPage: 5, currentPage: page, totalItems: totalRec }">
+              <td class="text-center">{{i+1}}</td>
+              <td class="text-center" >{{app.firstname}}</td>
+              <td class="text-center">{{app.lastname}}</td>
+              <td class="text-center">{{app.username}}</td>
+              <td class="text-center">{{app.email}}</td>
+              <td class="text-center"><button (click)="remove(app)" class="btn btn-danger">Delete</button>&nbsp;
+                <button (click)="update(app)" class="btn btn-info">Edit</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div>
+        <pagination-controls class="text-right" id="listing_pagination" maxSize="5" directionLinks="true" (pageChange)="page = $event"></pagination-controls>
+      </div>
+    </div>
+  </div>
+
+
+

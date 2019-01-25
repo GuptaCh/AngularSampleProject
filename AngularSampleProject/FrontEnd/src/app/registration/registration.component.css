@@ -1,0 +1,15 @@
+h4{
+    color:black;
+}
+
+
+.content{
+    margin-left: auto;
+    margin-right:auto;
+    background-color: aliceblue;
+    height:780px;
+    background-image:url("/assets/Images/reg.jpg"); background-repeat:no-repeat; background-position:center; background-size:cover; padding:100px;
+
+    }
+
+   
