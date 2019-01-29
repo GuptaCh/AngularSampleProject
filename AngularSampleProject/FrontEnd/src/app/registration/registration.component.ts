@@ -54,7 +54,7 @@ export class RegistrationComponent implements OnInit {
     .subscribe(response => {
     console.log(response);
     this.router.navigate(['/Login']);
-    this.toastr.success('Register successfully!');
+    this.toastr.warning('Register successfully!');
     })  
   }
 

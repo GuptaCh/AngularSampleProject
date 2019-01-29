@@ -10,15 +10,8 @@
   </div>
   <div class="navbar-expand ml-auto navbar-nav">
     <div class="navbar-nav">
-      <a class="nav-item nav-link" href="https://github.com/beeman" target="_blank">
-        <i class="fa fa-github"></i>
-      </a>
-      <a class="nav-item nav-link" href="https://twitter.com/beeman_nl" target="_blank">
-        <i class="fa fa-twitter"></i>
-      </a>
-      <a class="nav-item nav-link" href="https://medium.com/@beeman" target="_blank">
-        <i class="fa fa-medium"></i>
-      </a>
+   
+      <a *ngIf="authService.isLoggedIn()"><strong>{{authService.CurrentUser.firstname | titlecase}}</strong></a>
       <a *ngIf="authService.isLoggedIn()" (click)="authService.logout()" routerLink='/Login' class="btn btn-info" ><span class="glyphicon glyphicon-log-out"></span> Logout</a>
     </div>
   </div>

@@ -18,13 +18,14 @@ import { AppService } from './app.service';
 import { EditComponent } from './datagrids/edit/edit.component';
 import { UserComponent } from './datagrids/user/user.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { BlockcopypasteDirective } from './Directives/blockcopypaste.directive';
 
 
 @NgModule({
   declarations: [
     AppComponent,  
     HomeComponent, 
-    LoginComponent, HeaderComponent, PageNotFoundComponent,FooterComponent, RegistrationComponent,EditComponent,UserComponent
+    LoginComponent, HeaderComponent, BlockcopypasteDirective,PageNotFoundComponent,FooterComponent, RegistrationComponent,EditComponent,UserComponent
   ],
   imports: [
     BrowserModule,BrowserAnimationsModule,NgxPaginationModule,

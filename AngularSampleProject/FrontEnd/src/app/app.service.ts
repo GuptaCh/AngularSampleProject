@@ -51,11 +51,12 @@ app;
       {
          console.log("Result Login state " + JSON.stringify(response));
 
-         var resulobj=JSON.parse(JSON.stringify(response));
+         if(response!=null)
+         {
+          var resulobj=JSON.parse(JSON.stringify(response));
          
           if(resulobj.status==200)
           {
-           
               if(resulobj.token!=null )
               {
      	         var tokenInfo = this.getDecodedAccessToken(resulobj.token); 
@@ -75,6 +76,15 @@ app;
                errmessage="Please Enter valid Email";
                this.toastr.error(errmessage);
           }
+         }
+         else
+         {
+           var errmessage;
+             errmessage="Email and Password does not match";
+             console.log("l");
+             this.toastr.error(errmessage);
+         }
+    
        })
   }
 
